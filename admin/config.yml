@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: mgm-7/mgm-7.github.io  # <-- CAMBIA CON IL TUO USERNAME/REPO
+  branch: main
+  base_url: https://mgm-7.github.io # <-- CAMBIA CON IL TUO DOMINIO
+  auth_endpoint: https://mgm-7.github.io/.netlify/identity/
+  site_domain: mgm-7.github.io
+
+media_folder: "assets/img" # Dove verranno salvate le immagini caricate
+public_folder: "/assets/img" # La cartella pubblica per le immagini
+
+collections:
+  - name: "post"
+    label: "Post del Blog"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Pubblicato il", name: "date", widget: "datetime"}
+      - {label: "Corpo del testo", name: "body", widget: "markdown"}
